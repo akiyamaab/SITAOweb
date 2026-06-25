@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SITAO | Домашня сторінка</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/ignite-core.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ═══ ЗМІННІ ТЕМИ ═══ */
+        :root {
+            --bg:           #f8f9fa;
+            --card-bg:      #e9ecef;
+            --glass-bg:     rgba(168, 172, 176, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --text:         #212529;
+            --text-muted:   #6c757d;
+            --text-desc:    #555;
+            --shadow-sm:    rgba(0, 0, 0, 0.08);
+            --shadow-md:    rgba(0, 0, 0, 0.20);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg:           #111111;
+                --card-bg:      #1e1e1e;
+                --glass-bg:     rgba(40, 40, 40, 0.7);
+                --glass-border: rgba(255, 255, 255, 0.08);
+                --text:         #e0e0e0;
+                --text-muted:   #888;
+                --text-desc:    #aaa;
+                --shadow-sm:    rgba(0, 0, 0, 0.3);
+                --shadow-md:    rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        /* ═══ БАЗОВІ ═══ */
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* ═══ NAVBAR ═══ */
+        .navbar-glass img:not(.logo) {
+            filter: brightness(0);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .navbar-glass img:not(.logo) {
+                filter: brightness(0) invert(1);
+            }
+        }
+        
+        .navbar-glass {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(7px) saturate(200%);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 1px 0 var(--glass-border), 0 4px 12px var(--shadow-sm);
+        }
+
+        /* ═══ КАРТКА / ТАБИ ═══ */
+        .tab-card {
+            background: var(--card-bg);
+            border-radius: 34px;
+            padding: 2rem;
+        }
+        
+        .nav-underline .nav-link.active {
+            color: var(--text) !important;
+            border-bottom-color: var(--text) !important;
+        }
+
+        .nav-underline .nav-link {
+            color: var(--text-muted);
+        }
+
+        .nav-underline .nav-link:hover {
+            color: var(--text);
+            border-bottom-color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .tab-card { padding: 1rem; }
+        }
+
+        /* ═══ ІНФО-БЛОК ═══ */
+        .info-block {
+            font-size: 1.2rem;
+            font-family: monospace;
+            background: var(--glass-bg);
+            backdrop-filter: blur(7px) saturate(200%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0px 4px 24px var(--shadow-md);
+            border-radius: 18px;
+            padding: 1.5rem;
+        }
+
+        /* ═══ ФУТЕР ═══ */
+        .footer-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(7px) saturate(200%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 1px 0 var(--glass-border), 0 4px 12px var(--shadow-sm);
+        }
+
+        /* ═══ КОПІЮВАННЯ IP ═══ */
+        .copy-ip {
+            cursor: pointer;
+            user-select: none;
+        }
+        .copy-ip:hover {
+            text-decoration: underline dotted;
+            color: #0d6efd;
+        }
+
+        /* ═══ ЗОБРАЖЕННЯ ═══ */
+        .imgScr { width: 300px; }
+        .SpacerS { width: 150px; }
+        .mainimg { width: 264px; height: 264px; }
+
+        /* ═══ МОБІЛЬНА ═══ */
+        @media (max-width: 968px) {
+            .imgScr  { display: none !important; }
+            .SpacerS { display: none !important; }
+            h1  { font-size: 2rem; }
+            h4  { font-size: 1.2rem; }
+            p   { font-size: 0.85rem !important; }
+            img { max-width: 80% !important; height: auto !important; }
+            .mainimg   { max-width: 55% !important; height: auto !important; }
+            .container { padding-left: 12px; padding-right: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ НАВБАР ═══ -->
+    <div class="navbar-glass">
+        <div class="container d-flex align-items-center px-4 py-3">
+            <a href="/"><img class="logo" src="/images/icon/minilogo.png" alt="SITAO" width="36" height="36" /></a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <a href="https://dsc.gg/sitao"><img src="/images/icon/discord.svg" alt="Discord" width="24" height="24" /></a>
+                <a href="https://sitao.dynmap.xyz"><img src="/images/icon/map.svg" alt="Dynmap" width="24" height="24" /></a>
+                <a href="#shop"><img src="/images/icon/shop.svg" alt="Магазин" width="24" height="24" /></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ ГЕРОЙ ═══ -->
+    <div class="container text-center py-5">
+        <h1>SITAO</h1>
+        <p class="text-secondary mt-2">Український політичний сервер.</p>
+        <img src="/images/icon/main.png" alt="SITAO Logo" class="mainimg my-4" />
+        <p class="copy-ip" id="ip1" onclick="copyIP('ip1')">sitao.gomc.fun</p>
+        <div class="d-flex justify-content-center align-items-center gap-3 mt-2">
+            <span style="color: #0d6efd;">Онлайн:</span>
+            <hr class="flex-grow-1" style="max-width: 120px;" />
+            <span style="color: #0d6efd;">#(online)/#(max)</span>
+        </div>
+        <a href="#about" class="d-block mt-3">Детальніше &gt;</a>
+    </div>
+
+    <!-- ═══ ПРО SITAO / ПРИЄДНАТИСЬ ═══ -->
+    <div class="container my-4" id="about">
+        <ul class="nav nav-underline justify-content-center mb-0">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about-tab">Про SITAO</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#join-tab">Приєднатись</button>
+            </li>
+        </ul>
+
+        <div class="tab-content tab-card">
+
+            <div class="tab-pane fade show active" id="about-tab">
+                <div class="d-flex gap-4 align-items-start">
+                    <div>
+                        <p style="font-size: 42px; font-weight: 700;">SITAO</p>
+                        <p style="font-size: 22px; color: var(--text-desc); line-height: 1.6;">
+                            Сітао – політичний майнкрафт сервер, який працює і приносить радість своїм гравцям аж з 2021 року.
+                            Події на сервері відбуваються на картах реального світу, а кожен сезон триває пів року (зима–весна, літо–осінь).
+                            На сервері є багато цікавих механік, таких як створення міст та країн, війни, будування реальної техніки та багато чого іншого.<br />
+                            – Приєднуйся до нас та ставай частиною ком'юніті цього приємного, комфортного сервера!
+                        </p>
+                    </div>
+                    <img class="imgScr" src="/images/map-screenshot.png" alt="Мапа" style="
+                        width: 400px;
+                        border-radius: 10%;
+                        object-fit: cover;
+                        border: 1px solid var(--glass-border);
+                        box-shadow: 0px 8px 24px var(--shadow-md);
+                    "/>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="join-tab">
+                <div class="d-flex gap-4 align-items-center justify-content-center">
+                    <img src="/images/gameplay.png" alt="Геймплей" class="imgScr" style="border-radius: 8px;" />
+                    <div class="SpacerS"></div>
+                    <div class="info-block">
+                        <strong>Основна інформація:</strong><br /><br />
+                        МС: 1.21.4 – 1.21.11<br />
+                        IP: <span class="copy-ip" id="ip2" onclick="copyIP('ip2')">sitao.gomc.fun</span><br /><br />
+                        <a href="https://sitao.dynmap.xyz">Онлайн карта &gt;</a><br />
+                        <a href="https://dsc.gg/sitao">Діскорд &gt;</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══ ФУТЕР ═══ -->
+    <div class="footer-glass">
+        <div class="container p-3">
+            <div class="d-flex align-items-center gap-3 pb-3">
+                <img src="/images/icon/icon-gray.png" alt="SITAO" width="64" height="64" />
+                <div>
+                    <h4 class="mb-1 fw-bold">SITAO</h4>
+                    <p class="mb-0" style="color: var(--text-muted);">
+                        Політичний сервер в грі Minecraft. Комфортна лампова атмосфера, РП та комюніті не дадуть тобі засумувати!
+                        Приєднуйся до нас вже зараз за посиланням вище, ми чекаємо на тебе.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <div class="d-flex align-items-center justify-content-between pb-2">
+                <p class="mb-0" style="color: var(--text-muted);">© 2026 SITAO.</p>
+                <p class="mb-0" style="color: var(--text-muted);">Україна</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ignite-core.js"></script>
+    <script>
+        function copyIP(btnId) {
+            const ip = 'sitao.gomc.fun';
+            const el = document.getElementById(btnId);
+
+            const doCopy = () => showCopied(el);
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(ip).then(doCopy);
+            } else {
+                const ta = Object.assign(document.createElement('textarea'), {
+                    value: ip,
+                    style: 'position:fixed;opacity:0'
+                });
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                doCopy();
+            }
+        }
+
+        function showCopied(el) {
+            const orig = el.textContent.trim();
+            el.textContent = 'Скопійовано!';
+            el.style.color = '#0d6efd';
+            setTimeout(() => { el.textContent = orig; el.style.color = ''; }, 1500);
+        }
+    </script>
+
+</body>
+</html>
